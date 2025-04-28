@@ -1,5 +1,0 @@
-INDEX VERSION 1.134+D:\OneDrive\Work\School\AY24-25\KS5 (IB)\Java Programming\.metadata\.plugins\org.eclipse.jdt.core
-2415777266.index
-1720509468.index
-412527577.index
-1865797976.index

@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * 
- */
-module FoodApp {
-	requires java.desktop;
-}
