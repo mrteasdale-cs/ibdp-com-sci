@@ -1,0 +1,139 @@
+package SW_1;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import javax.swing.SpringLayout;
+import javax.swing.JPanel;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.io.FileWriter;
+import java.io.IOException;
+public class UserInput {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+
+	/**
+	 * Launch the application.
+	 */
+	
+	/**
+	 * Create the application.
+	 */
+	public UserInput() {
+		create_Input();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void create_Input() {
+		frame = new JFrame();
+		frame.setVisible(true);
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		SpringLayout springLayout = new SpringLayout();
+		frame.getContentPane().setLayout(springLayout);
+		
+		JPanel panel = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, panel, 0, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel, 0, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel, 263, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel, 436, SpringLayout.WEST, frame.getContentPane());
+		frame.getContentPane().add(panel);
+		SpringLayout sl_panel = new SpringLayout();
+		panel.setLayout(sl_panel);
+		
+		JLabel lblNewLabel = new JLabel("Please enter the following information:");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel, 10, SpringLayout.NORTH, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel, -128, SpringLayout.EAST, panel);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Name:");
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Gender:");
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel_2, 0, SpringLayout.EAST, lblNewLabel_1);
+		panel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Age:");
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel_3, 0, SpringLayout.EAST, lblNewLabel_1);
+		panel.add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_4 = new JLabel("Weight:");
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel_4, 0, SpringLayout.EAST, lblNewLabel_1);
+		panel.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Height:");
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel_5, 0, SpringLayout.EAST, lblNewLabel_1);
+		panel.add(lblNewLabel_5);
+		
+		textField = new JTextField();
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_1, 3, SpringLayout.NORTH, textField);
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel_1, -27, SpringLayout.WEST, textField);
+		sl_panel.putConstraint(SpringLayout.NORTH, textField, 24, SpringLayout.SOUTH, lblNewLabel);
+		sl_panel.putConstraint(SpringLayout.EAST, textField, 0, SpringLayout.EAST, lblNewLabel);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_2, 3, SpringLayout.NORTH, textField_1);
+		sl_panel.putConstraint(SpringLayout.NORTH, textField_1, 6, SpringLayout.SOUTH, textField);
+		sl_panel.putConstraint(SpringLayout.WEST, textField_1, 0, SpringLayout.WEST, textField);
+		textField_1.setColumns(10);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_3, 3, SpringLayout.NORTH, textField_2);
+		sl_panel.putConstraint(SpringLayout.NORTH, textField_2, 6, SpringLayout.SOUTH, textField_1);
+		sl_panel.putConstraint(SpringLayout.WEST, textField_2, 0, SpringLayout.WEST, textField);
+		textField_2.setColumns(10);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_5, 3, SpringLayout.NORTH, textField_3);
+		sl_panel.putConstraint(SpringLayout.WEST, textField_3, 0, SpringLayout.WEST, textField);
+		textField_3.setColumns(10);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_4, 3, SpringLayout.NORTH, textField_4);
+		sl_panel.putConstraint(SpringLayout.NORTH, textField_3, 6, SpringLayout.SOUTH, textField_4);
+		sl_panel.putConstraint(SpringLayout.NORTH, textField_4, 6, SpringLayout.SOUTH, textField_2);
+		sl_panel.putConstraint(SpringLayout.WEST, textField_4, 0, SpringLayout.WEST, textField);
+		textField_4.setColumns(10);
+		panel.add(textField_4);
+		
+		JButton btnNewButton = new JButton("Confirm");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new User(textField.getText(), textField_1.getText(), Double.parseDouble(textField_2.getText()), Double.parseDouble(textField_3.getText()),Double.parseDouble(textField_4.getText()));
+				writeFile();
+				new UserInfo();
+				frame.setVisible(false);
+			}
+		});
+		sl_panel.putConstraint(SpringLayout.NORTH, btnNewButton, 23, SpringLayout.SOUTH, textField_3);
+		sl_panel.putConstraint(SpringLayout.EAST, btnNewButton, -173, SpringLayout.EAST, panel);
+		panel.add(btnNewButton);
+	}
+	
+	private void writeFile(){
+		String csvFile = "userData.csv";
+		try (FileWriter writer = new FileWriter(csvFile)) {
+		writer.append(textField.getText() + "," + textField_1.getText() + "," + textField_2.getText() + "," + textField_3.getText() + "," + textField_4.getText()+ "\n");
+	} catch (IOException e) {
+        System.err.println("Error writing to file: " + e.getMessage());
+    } 
+	}
+}

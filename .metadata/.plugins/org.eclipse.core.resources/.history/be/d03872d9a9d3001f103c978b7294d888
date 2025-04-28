@@ -1,0 +1,96 @@
+package SW_1;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.SpringLayout;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class UserInfo {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+
+	/**
+	 * Create the application.
+	 */
+	public UserInfo() {
+		create_Info();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void create_Info() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JPanel panel = new JPanel();
+		frame.getContentPane().add(panel, BorderLayout.CENTER);
+		SpringLayout sl_panel = new SpringLayout();
+		panel.setLayout(sl_panel);
+		
+		JLabel lblNewLabel = new JLabel("User info");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel, 10, SpringLayout.NORTH, panel);
+		sl_panel.putConstraint(SpringLayout.WEST, lblNewLabel, 188, SpringLayout.WEST, panel);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_2 = new JLabel("Name");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_2, 59, SpringLayout.NORTH, panel);
+		sl_panel.putConstraint(SpringLayout.WEST, lblNewLabel_2, 162, SpringLayout.WEST, panel);
+		panel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("New label");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_3, 84, SpringLayout.NORTH, panel);
+		sl_panel.putConstraint(SpringLayout.WEST, lblNewLabel_3, 162, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel_3, 0, SpringLayout.EAST, lblNewLabel_2);
+		panel.add(lblNewLabel_3);
+		
+		JButton btnNewButton = new JButton("Edit");
+		sl_panel.putConstraint(SpringLayout.NORTH, btnNewButton, 137, SpringLayout.SOUTH, lblNewLabel);
+		sl_panel.putConstraint(SpringLayout.WEST, btnNewButton, 0, SpringLayout.WEST, lblNewLabel);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new UserInput();
+				frame.setVisible(false);
+			}
+		});
+		panel.add(btnNewButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("New label");
+		sl_panel.putConstraint(SpringLayout.WEST, lblNewLabel_1, 148, SpringLayout.WEST, panel);
+		sl_panel.putConstraint(SpringLayout.SOUTH, lblNewLabel_1, -5, SpringLayout.NORTH, lblNewLabel_2);
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_4 = new JLabel("New label");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_4, 0, SpringLayout.NORTH, lblNewLabel_1);
+		sl_panel.putConstraint(SpringLayout.WEST, lblNewLabel_4, 29, SpringLayout.EAST, lblNewLabel_1);
+		panel.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("New label");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_5, 0, SpringLayout.NORTH, lblNewLabel_2);
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel_5, 0, SpringLayout.EAST, lblNewLabel_1);
+		panel.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_6 = new JLabel("New label");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_6, 0, SpringLayout.NORTH, lblNewLabel_2);
+		sl_panel.putConstraint(SpringLayout.WEST, lblNewLabel_6, 0, SpringLayout.WEST, lblNewLabel_4);
+		panel.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("New label");
+		sl_panel.putConstraint(SpringLayout.NORTH, lblNewLabel_7, 3, SpringLayout.SOUTH, lblNewLabel_3);
+		sl_panel.putConstraint(SpringLayout.EAST, lblNewLabel_7, 0, SpringLayout.EAST, lblNewLabel_1);
+		panel.add(lblNewLabel_7);
+		UserInfo info = new UserInfo();
+		info.frame.setVisible(true);
+	}
+}
