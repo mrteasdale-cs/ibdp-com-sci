@@ -3,7 +3,7 @@ package com.mycompany.introtojava;
 import javax.swing.JOptionPane;
 /**
  * IntroductionToJava.java - the basics of Java programming
- * @author X
+ * @author studentname
  * @since 1/1/2025
  * @instructor Mr. Teasdale
  */
