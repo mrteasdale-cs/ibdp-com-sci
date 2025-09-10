@@ -2,8 +2,8 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../Level 4 Iteration">
-      <sourceFolder url="file://$MODULE_DIR$/../Level 4 Iteration/src" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../Level 04 Iteration">
+      <sourceFolder url="file://$MODULE_DIR$/../Level 04 Iteration/src" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="openjdk-24" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
