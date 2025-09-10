@@ -16,7 +16,7 @@ public class Simpsons {
     public String checkWho(){
         String returnString = null;
 
-        if ((this.age == 39) && (this.gender.toLowerCase().equals("m"))) {
+        if ((this.age == 39) && (this.gender.equalsIgnoreCase("m"))) {
             returnString = "It's Homer Simpson!";
         } else if ((this.age == 34) && (this.gender.toLowerCase().equals("f"))) {
             returnString = "It's Marge Simpson!";
