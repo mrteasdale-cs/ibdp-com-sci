@@ -10,8 +10,15 @@ public class GUIPopup {
         );
 
         if (answer.equals("Paris")) {
+            String message = answer + " is correct!";
             JOptionPane.showMessageDialog(null,
-                    "Correct, it is Paris!", "Correct!",
+                    message, "Correct!",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+        } else {
+            String message = answer + " is incorrect!";
+            JOptionPane.showMessageDialog(null,
+                    message, "Correct!",
                     JOptionPane.INFORMATION_MESSAGE
             );
         }
