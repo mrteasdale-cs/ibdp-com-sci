@@ -14,6 +14,5 @@ public class Main {
         Account acc2 = new Account("98765", "Tommy");
         acc2.printAccountDetails();*/
 
-
     }
 }
