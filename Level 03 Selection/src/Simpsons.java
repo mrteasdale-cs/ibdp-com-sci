@@ -12,6 +12,14 @@ public class Simpsons {
     public String getName() {
         return this.name;
     }
+
+    //mutator
+    public void setName(String name){
+        this.name = name;
+    }
+    public void sayHi(){
+        System.out.println("Hi!");
+    }
     //checker
     public String checkWho(){
         String returnString = null;

@@ -2,7 +2,6 @@ public class Main {
     public static void main(String[] args) {
 
         Playlist pl = new Playlist("Myran's Playlist");
-
         pl.addSong("Baby", "Justin Bieber");
         pl.addSong("Mac", "Mac Force 1");
 

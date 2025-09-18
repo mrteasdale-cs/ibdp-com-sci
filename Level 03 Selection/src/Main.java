@@ -17,6 +17,8 @@ public class Main {
         //check which simpsons
         System.out.println(simp1.checkWho());
 
+        simp1.sayHi();
+
 
     }
 }
