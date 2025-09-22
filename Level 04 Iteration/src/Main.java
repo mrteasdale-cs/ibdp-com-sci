@@ -28,6 +28,6 @@ public class Main {
             System.out.println(colours[i]);
         }
 
-        scanner.close();
+        scanner.close();//hi
     }
 }
