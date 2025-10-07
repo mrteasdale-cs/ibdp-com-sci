@@ -9,6 +9,7 @@ public class NoughtsAndCrosses {
         char currentPlayer = 'X';
         initialiseBoard();  //EXPLAIN:
 
+
         while (true) { //EXPLAIN:
             printBoard(); //EXPLAIN:
             System.out.println("Player " + currentPlayer + ", enter row and column (0, 1, or 2):");

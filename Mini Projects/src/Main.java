@@ -3,6 +3,9 @@ public class Main {
     public static void main(String[] args) {
 
         new NoughtsAndCrosses();
+        /*XandO game = new XandO();
+        game.initialiseBoard();
+        game.printBoard();*/
         /*Account acc1 = new Account("12345", "Myran", 9999999.99);
 
         System.out.println("$"+acc1.getBalance());
