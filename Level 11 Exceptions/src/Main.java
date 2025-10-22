@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
         //new ExceptionHandling2();
         //new ExceptionHandling();
-
-        ThrowException throwE = new ThrowException();
+        new PrintStatmentDebug();
+        /*ThrowException throwE = new ThrowException();
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter your age: ");
@@ -25,6 +25,8 @@ public class Main {
             System.out.println("Enter your age again: ");
             getAge = sc.nextInt();
         }
+
+         */
 
     }
 }

@@ -1,6 +1,19 @@
 public class Main {
     public static void main(String[] args) {
 
+        UserDefinedStacks stack = new UserDefinedStacks(10);
+
+        int[] LINE = {3,6,4,8,1};
+
+        for (int value : LINE) {
+            stack.push(value);
+        }
+
+        while (!stack.isStackEmpty()) {
+            System.out.println(stack.pop());
+        }
+
+        /*
         Playlist pl = new Playlist("Myran's Playlist");
         pl.addSong("Baby", "Justin Bieber");
         pl.addSong("Mac", "Mac Force 1");

@@ -9,6 +9,6 @@ public class Main {
        myran.addSales(10000, 4);
        myran.addSales(100000, 5);
 
-           myran.printSales();
+       myran.printSales();
     }
 }
