@@ -18,31 +18,32 @@ public class Main {
         System.out.println(newAcc3.toString());*/
 
         // Java - example using static array
-        /*
+
         BankAccount[] accounts = new BankAccount[3];
         accounts[0] = new BankAccount("Amy");
         accounts[1] = new BankAccount("Brian");
-        accounts[2] = new BankAccount("Clare");*/
+        accounts[2] = new BankAccount("Clare");
 
         // Java - example iterating over static array
 
-        String[] names = {"Amy", "Brian", "Clare"};
+        /*String[] names = {"Amy", "Brian", "Clare"};
         BankAccount[] accounts = new BankAccount[3];
         for (int i=0; i<accounts.length; i++) {
             accounts[i] = new BankAccount( names[i] );
         }
 
-        /*// Java - example using ArrayList
+        // Java - example using ArrayList
         // Remember to import java.util.ArrayList
+
         ArrayList<BankAccount> accounts = new ArrayList<BankAccount>();
         accounts.add(new BankAccount("Amy"));
         accounts.add(new BankAccount("Brian"));
-        accounts.add(new BankAccount("Clare"));*/
+        accounts.add(new BankAccount("Clare"));
 
         //output the accounts from the array
         for (int i=0; i<accounts.length; i++) {
             System.out.println(accounts[i]);
-        }
+        }*/
 
     }
 }
